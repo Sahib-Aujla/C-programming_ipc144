@@ -1,0 +1,5 @@
+﻿  Game.c
+C:\ipc144\IPC-Workshops-master\Project1\Game.c(53,11): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\ipc144\IPC-Workshops-master\Project1\Game.c(70,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\ipc144\IPC-Workshops-master\Project1\Game.c(50): warning C4715: 'snakeWaterGun': not all control paths return a value
+  Project1.vcxproj -> C:\ipc144\IPC-Workshops-master\Project1\x64\Debug\Project1.exe

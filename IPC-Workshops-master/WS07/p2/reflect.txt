@@ -1,0 +1,73 @@
+*****************************************************************************
+                               Reflection
+                             Workshop - #7
+Full Name  : Sahibpreet singh
+Student ID#: 165338211
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+
+1. Structures enable the programmer to create a user defined variable which contains primitive data
+   types like int , char along with declaration of arrays and more. Here is an example of a structure from my workshop
+     struct PlayerInfo {
+		int playerLives;
+		char playerSymbol;
+		int PlayertreasureCount;
+		char playerHistory[MAX_POSITIONS];
+     };
+  This struct stores the player information for the game. PlayerInfo has int types, char type , a character array
+  and an integer array. Structure variables can be further created to store the data like 
+   struct PlayerInfo player1, player2.
+Without struct the user have to create different 4 additional variables for storing player 1 and 4 variables for player 2
+and so on. However with structs the complexity of managing different variables reduces and data becomes
+more classified and structured which improves the readablity of the code.
+
+2. The history of games played can be tracked by creating a struct for the endgame record
+   which would include, an array for keeping track of treasures found , an array for number of lives,
+    an array for number of moves which would store information from different sessions of the
+   game, and a variable for storing number of games played from the beginning.
+
+	Struct GameHistory{
+       int TreasureCounter[MAX_POSITIONS];
+	 int RemainingLives[MAX_POSITIONS];
+       int RemainingMoves[MAX_POSITIONS];
+	 int gameCounter;
+     };
+   In order to implement this, first I would ask the user to play again after one gameplay ends, 
+   to do this I 'll put the entire gameplay code in another iteration construct for the validation 
+   of playing again scenario. If the user decides to play again the game will restart , however, the treasure
+   count, number of lives, number of moves would be saved in their repective arrays
+   from the previous game, and the number of games would be 2 now and it will continue. After the
+   player decides to not continue playing, the game will exit along with showing the number of games 
+   played and the treasure count stored in the array, along with corresponding game number.
+   
+   To display the result a struct variable would be declared and a loop would be used to display the values.
+  for example
+	struct GameHistory gameHis;
+      The data would be stored during the game and now an example would be given to display the history.
+     for(i=0;i<gameCounter;i++){
+         printf("+---------------------------------------------------+\n");
+         printf(" Lives: %2d | Treasures: %2d | Moves Remaining: %2d\n",gameHis.RemainingLives[i],gameHis.TreasureCounter[i],gameHis.RemainingMoves[i]);
+         printf("+---------------------------------------------------+\n");
+     }
+     printf("Total number of games played %d\n",gameCounter);
+     
+     This is how I'll store the history of the game.
+
+3. Thinking about the game logic of w7p2 was difficult for me especially the part with the history of 
+   player where I have to print !-$-!--.-.----&----$ according to the input of the user. To solve 
+   this problem I earlier used an integer array named playerHistory in which 1 was stored at the index
+   input by the player. After that the playerHistory Array was used to validate for the printing of the
+    character symbolic notations.
+   However the problem was that I used a loop to print these characters every time, which didn't store the
+   previous input, that is if at index 2 a bomb was found and '!' was printed at the second index.
+   After the second move input by the user , the previous '!' was removed and replaced with a '.' .
+   So I was able to solve this problem due to the guidance provided by our professor, he advised to
+   create a character array playerHistory and store the character to its default '-' from the beginning
+   and just update the value afterwards at the index updated by the user and print that array using a loop
+   after that.
+   This solution worked and I was able to solve my problem , thanks to my professor's help. Other than that
+   there were other challenges too but this was more time consuming for me than others.

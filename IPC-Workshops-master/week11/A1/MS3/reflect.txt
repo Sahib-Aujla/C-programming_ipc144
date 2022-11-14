@@ -1,0 +1,101 @@
+/*
+*****************************************************************************
+						Assignment 1 - Milestone 3
+Full Name  : Sahibpreet Singh
+Student ID#: 165338211
+Email      : sahibpreet-singh1@myseneca.ca
+Section    : NKK
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+*/
+
+1. To facilitate the coding process, and to ensure that I am writing an effiecient program, I created
+   2 utility functions and 1 input function to make it easier for me to program the application 
+   efficiently. The three functions are listed below alon with the brief description about there functionality.
+
+ i.void sortAppointments(struct Appointment*); --> The reason for creating this function is to sort the
+  Appointment struct and display it organised based on time and date. I created this function in order, to make my
+  code more readable and divide the functionalities in regards of modular programming. This function has a parameter
+  of Appointment struct which passes it by reference. Then sort the appointments struct and its members, by 
+  using bubble sort algorithm (this algorithm was in the course notes in algorithms and was demonstrated in SLG groups).
+
+ii.void reverse(struct Appointment* temp1, struct Appointment* temp2); --> The function reverse has been created too for 
+  facilitating with programming process and avoiding repeating code. The reason for creating this function is due to the 
+  repetition of code in the sortAppointments function for sorting the data.This function has two parameters passed by reference.
+  It receives two Appointment structs and swap or reverse there order, by assigning the parameters to an empty struct Appointment
+  tempData.This has led to an ease in functionality of the program.
+
+iii.void inputDate(int*, int*, int*); --> This function has been constructed for inputting the date and return it by reference.
+    This function receives the address of 3 integer variable as parameters which are used for storing and returning the day, month and year.
+    The reason for creating this function is due to its repetition. The same function has been used several times for the validation
+    of the date, and thus a function was created.
+
+
+2. The addAppointment function utilised 50-55 lines of code. I saved more than double the lines of code by using functions and pattern recognition.
+   Due to the functions created in core.c and several utility and input functions this code took way less space. 
+   Ofcourse splitting functionality is the recommended way and is considered as a best, that's why I used 5 functions to facilitate with my task.
+   The first function that is used is  
+   foundIdx = findPatientIndexByPatientNum(patientNum, patient, MAX_PETS_); This function is used to get
+   the index of the patient of number from the patients array. It validates the existence of the patient number in the patient struct by returning 
+   the index and -1 in case the patient number wasn't found. This function resulted in reducing more than 15 lines of code.
+   
+   The next technique is used pattern recognition for determining an empty position for the appointment to be added. A for loop is used for determining an 
+   empty position in the appointment array and the index is stored in a found variable. The reason for using this for loop for determining an empty space is
+   to validate the existence of an empty position, in case there is no empty position it will throw an error and wouldn't proceed further, thus saving time
+   and memory.
+
+  The next is a function named 				
+  inputDate(&day, &month, &year); --> This function receive the addresses of day, month and year and return the variables after validation and the input process.
+  This function saved more than 13 lines of code, which enables the process of inputting dates more easy and improves readability.
+  
+  The next function is named inputTime(&hour,&min); --> for the purpose of inputting the time and validate according to the requirements. This function receives the address
+  of minute and hour function and return the value through dereferencing. 
+  
+  A for loop is used after the date and time input to match the day and time and to ensure that no overlapping or overbooking happens.
+  In case there's an overlapping then it will display an appropriate message.
+  
+  If the timeslot is available then the next code block assigns the values of date time and patient number to the appointment array at the 
+  index which was found earlier in the first for loop, which displays pattern recognition. This code block occupies 5-6 lines of code.
+
+All these functions and pattern recognition techniques resulted in a smaller codeblock for the function addAppointment.
+
+3.I developed this project over the course of 3 weeks, we were provided this project in 3 parts or milestones.
+  When I first encountered this project in the week 1 of the project it seemed really tough, and ofcourse
+  I encountered a lot of problems however due to proper guidance from our professor, I was able to complete this project. The process involved a lot of ups and downs,
+  from getting frustrated to achieving small success when my program worked (which was usually small lived as I encounter more errors thereafter).
+  From Milestone 1:
+  Our professor informed us and demonstrated milestone 1 and gave us a brief description about it in the class, which gave me the basic understanding of the project's 
+  first part. For this project we have to program and test some functions which were to be used later in the project.
+  The start was a bit tough, as it took some time for me understand the project. However, when I understood the project, it was
+  time to code. By the way , this is all happening on the same day as the class. I started working on the functions from the start, bit by bit
+  coding the functions. I always make sure that the part I am working on is working as required and I don't usually move further, because the same bug would become a
+  bigger bug later on, so even if it consumes time, I ensure that my program is working fine.I coded the functions and I was able to do it while encountering some bugs.
+  However, the biggest obstacle was a runtime error that was caused due to stack overflow I encountered in inputCString, it took me three days to solve this problem when
+  my professor demonstrated it to the whole class and I was able to solve it. I coded most of the MS1 on the same day as the first class which was Tuesday, however I completed
+  and solved this bug on thursday.
+  Stopping at Milestone 2:
+  Then came the milestone 2, it was like a boulder even tougher than first milestone. However, as a programmer I have to solve these problems. Here my professor guided me again,
+  on how to get started with the milestone 2. The problem with this program was usually the formatting and the input
+  buffer. I have to code a lot of utility functions and other input functions which I completed while coping with a lot of errors which were minor and some were tough to crack.
+  However, the big problem was formatting and the input buffer, the input buffer took like 2-3 hours 
+  work according to the format. I was really frustrated with it and it worked after I used one clearInputBuffer, it got corrected. I coded most of the functions on tuesday,
+  however I debugged the rest on thursday. I decided to submit it on thursday, however inputs took so long for me followed by formatting errors
+  which led me to quit the submission and I completed the submission the next day that is on friday.
+  To Milestone 3:
+  Now came the final milestone for this project. The biggest obstacle for me was the sorting of the appointment struct. It took like 3 days for me to code.
+  I started this milestone 3 on tuesday and got stuck in the sorting algorithm. However I broke my rule of not going over the next part ,until I was done with
+  the current one. I got frustrated and moved to the viewScheduleAppointments and addApppointment. I coded the viewScheduleAppointments
+  but I my mind was still on the sorting problem. I tried doing it again I tried several debugging techniques and was able to create the correct algorithm on tuesday itself.
+  However there was still one little bug that was unnoticed by me till thursday morning. I left doing it and moved on while not doing much on wednesday.
+  Then cam Thursday I started the day with my class, in which our professor showed a different way of sorting. I observed my algorithm too that the basic
+  fundamentals were the same, so why my code wasn't working. I again looked at it and used some print statements and found out that my outer loop wasn't getting
+  executed again, while the code was fine. The mistake was just a small one , I mistakenly used i++ instead of j++ in the inner loop, which costed me 2 days along with several
+  doses of frustration. However I correct it and began coding the rest of the project, I encountered some errors, however due to God's grace I was able to solve them
+  and thus complete my project,
+ 
+The overall experience of the project was a fun ride, I learnt quite a lot which was great for me, as programmers we need to keep our head cool
+and solve the problem (easier said than done). One important lesson Just keep trying and have faith in God and yourself.

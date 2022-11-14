@@ -1,0 +1,5 @@
+﻿  main2.c
+  w8p2.c
+C:\ipc144\IPC-Workshops-master\WS08\p2\w8p2.c(139,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  w8p2.vcxproj -> C:\ipc144\IPC-Workshops-master\WS08\p2\x64\Debug\w8p2.exe

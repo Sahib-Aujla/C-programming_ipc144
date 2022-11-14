@@ -1,0 +1,168 @@
+*****************************************************************************
+                               Reflection
+                             Workshop - #4 part 2
+Full Name  : Sahibpreet singh
+Student ID#: 165338211
+Section    : NKK
+email      : sahibpreet-singh1@myseneca.ca
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+
+1. Selection is a really important concept in programming because it enables the programmer to cover different 
+   scenarios and hence the path to take if a certain scenario is chosen. It is extremely valuable in programming 
+   as it enables the program to be flexible according to different inputs or actions performed by the user. 
+   Here is a more realistic and practical example:
+   Consider a webpage where you enter your information for signing up and you leave the name blank empty and click
+   submit. A popup or error message would appear to notify you to enter your name. However, if you had entered the
+   form correctly and clicked submit, it would have been submitted. The fact that it takes two different paths is
+   due to selection which covers what response to give in accordance to different scenarios.
+
+   Now 3 examples of selection from my program:
+   if (noOfApples != 0) {
+
+			while (pickedApples != noOfApples) {
+				printf("Pick some APPLES... how many did you pick? : ");
+				scanf("%d", &pickedApples);
+				if (pickedApples <= 0) {
+					printf("ERROR: You must pick at least 1!\n");
+
+				}
+				else {
+
+					if (pickedApples > noOfApples) {
+						printf("You picked too many... only %d more APPLE(S) are needed.\n", noOfApples);
+						//printf("Looks like we still need some APPLES...\n");
+						pickedApples = 0;
+					}
+					
+					else if (pickedApples < noOfApples) {
+					
+						printf("Looks like we still need some APPLES...\n");
+
+						noOfApples = noOfApples - pickedApples;
+						pickedApples = 0;
+
+					}
+					
+
+
+				}
+
+
+			}
+    Consider this code block which has more than 3 selection statements :
+	if (noOfApples != 0) : This statement is optional selection example i.e. if the noOfApples are not equal 
+    equal to 0, then only you execute this statement.
+   The selection heavily influenced my solution as it is clear from the code, how many different scenarios and conditions
+   are covered in it. Without the selection it would have been extremely difficult or maybe impossible to get 
+   the same solution.
+
+2. A nested construct is a construct which includes more constructs within it which can be either iteration constructs or
+   selection constructs and within that even more and so on..
+  First example of nested construct:
+    if (noOfApples != 0) {
+
+			while (pickedApples != noOfApples) {
+				printf("Pick some APPLES... how many did you pick? : ");
+				scanf("%d", &pickedApples);
+				if (pickedApples <= 0) {
+					printf("ERROR: You must pick at least 1!\n");
+
+				}
+				else {
+
+					if (pickedApples > noOfApples) {
+						printf("You picked too many... only %d more APPLE(S) are needed.\n", noOfApples);
+	
+						pickedApples = 0;
+					}
+					
+					else if (pickedApples < noOfApples) {
+					
+						printf("Looks like we still need some APPLES...\n");
+
+						noOfApples = noOfApples - pickedApples;
+						pickedApples = 0;
+
+					}
+					
+
+
+				}
+
+
+			}
+  Even though it is the same code block as above, it is a great example to explain nested constructs.
+  Explanation: The first if statement would only execute when no. of apples are not equal to 0.
+           ii. Then the second line will only execute and continue to execute until pickedApples are not equal to 
+               no. of apples.
+         iii. Then the line printf prints the content and takes the input.
+          iv. Then it checks if picked apples are less than or equal to 0. If the condition is true then it executes
+              the error message and move back to the step iii , otherwise it moves to the else statement.
+           v. Then it checks if the picked apples are greater than no. of apples , then it executes printf statement
+              and re initialises the picked apples to 0 and repeat step iii.
+          vi. However, if the picked apples are less than no. of apples. The code executes the print statements while
+              updating the no. of apples. and reinitialise the picked variable to 0.
+          vii. After that it checks the condition of step ii. If it is still true then the program wille execute otherwise,
+              it will not and end the program for that code block.
+
+Second example:		
+The second input is a do while iteration construct nested with a selection construct.
+
+ do {
+			
+			printf("How many APPLES do you need? : ");
+			scanf("%d", &noOfApples);
+			if (noOfApples < 0) {
+				printf("ERROR: Value must be 0 or more.\n");
+			}
+		 } while (noOfApples < 0);
+Explanation: The do while construct would run at least once and check the condition later.
+     i. The printf statement is executed and then the scanf statement asking the user for input.
+    ii. if the no of apples are less than 0, then the optional selectional would execute and print the error message.
+   iii. After that it will check the condition for the iteration. If the no. of apples are less than 0 then the iteration continues and the iteration
+        will end when the no. of apples becomes greater than or equal to 0.
+3. while loop is my favourite iteration construct as compared to for and do/while loops because I find it easier to use and used it at number of
+   occassions in my part 2 solution . 
+   However, each and every loop has its applications and tasks which are they best suited for. Like I used both do/while and while loops
+   in part 2 of this workshop according to the scenario. However, do/while loop usually runs the code first and then checks the condition, which isn't 
+   desirable in most cases. whereas , the while loop first checks the condition and execute then iterates.
+   In case of for loop it requires a lot of code to write but for me it is less flexible to use than while loop. Moreover, while loop can be easily modified
+   with a small line of code and be used to perform the same tasks as for and do/while. 
+   So these are the reasons why I prefer while loop over the other iteration constructs.
+   Examples of while loop from my code of solution 2 is same as the answer 1 from this text file.
+  
+			while (pickedApples != noOfApples) {
+				printf("Pick some APPLES... how many did you pick? : ");
+				scanf("%d", &pickedApples);
+				if (pickedApples <= 0) {
+					printf("ERROR: You must pick at least 1!\n");
+
+				}
+				else {
+
+					if (pickedApples > noOfApples) {
+						printf("You picked too many... only %d more APPLE(S) are needed.\n", noOfApples);
+						//printf("Looks like we still need some APPLES...\n");
+						pickedApples = 0;
+					}
+					
+					else if (pickedApples < noOfApples) {
+					
+						printf("Looks like we still need some APPLES...\n");
+
+						noOfApples = noOfApples - pickedApples;
+						pickedApples = 0;
+
+					}
+					
+
+
+				}
+
+
+      The loop will continue till the picked apples is not equal to no. of apples. Just a simple condition which does the all work.         

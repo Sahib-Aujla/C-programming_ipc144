@@ -1,0 +1,131 @@
+*****************************************************************************
+                               Reflection
+                             Workshop - #6
+Full Name  : Sahibpreet Singh
+Student ID#: 165338211
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+
+1. I used parallel arrays to group 3 related data types in this workshop namely the cost of items, item priority 
+   and item finance. The linking process included to store the related values at the same index in 3 different arrays.
+   The key to accomplish this task was to understand the basics of array and how they function. By having the information
+   that all arrays start from a 0 index the task of creating parallel arrays became possible.
+   By synchronising the index number in a for loop and taking input for all the other values through statements set
+   in the for loop for all the 3 arrays at the same time and at the same index resulted in the creation of parallel
+   arrays.
+   Here is the code from my workshop to demonstrate the parallel arrays:
+    for (ItemNumber = 0; flagItemDetails == 1;ItemNumber++) {
+        if (ItemNumber >= numOfItems) {
+            flagItemDetails = 0;
+        }
+        else {
+            printf("\nItem-%d Details:\n", ItemNumber + 1);
+            while (flagCost == 1) {
+                printf("   Item cost: $");
+
+
+                scanf("%lf", &costOfItem[ItemNumber]);
+                if (costOfItem[ItemNumber] < 100) {
+                    printf("      ERROR: Cost must be at least $100.00\n");
+                }
+                else {
+                    flagCost = 0;
+                }
+            }
+            flagCost = 1;
+
+            while (flagPriorityItem == 1) {
+          
+                printf("   How important is it to you? [1=must have, 2=important, 3=want]: ");
+                scanf("%d", &itemPriority[ItemNumber]);
+                if (itemPriority[ItemNumber] >3 || itemPriority[ItemNumber]<1) {
+                printf("      ERROR: Value must be between 1 and 3\n");
+                }
+                else {
+                    flagPriorityItem = 0;
+                }
+            }
+            flagPriorityItem = 1;
+
+            while (flagItemFinance == 1) {
+                printf("   Does this item have financing options? [y/n]: ");
+                scanf(" %c", &itemFinance[ItemNumber]);
+                if (itemFinance[ItemNumber] !='y' && itemFinance[ItemNumber] != 'n') {
+                printf("      ERROR: Must be a lowercase 'y' or 'n'\n");
+                }
+                else {
+                    flagItemFinance = 0;
+                }
+            }
+            flagItemFinance = 1;
+        }
+    }
+ Sure, this a long code but it demonstrates the creation of parallel arrays. As you can see that itemNumber is same
+ for all the arrays and will only increment when all the three 3 inputs have been successfully taken.
+
+for (ItemNumber = 0; ItemNumber < numOfItems; ItemNumber++) {
+		printf("%3d  %5d    %5c    %11.2lf\n", ItemNumber + 1, itemPriority[ItemNumber], itemFinance[ItemNumber], costOfItem[ItemNumber]);
+		sumItemCost += costOfItem[ItemNumber];
+	}
+The above code demonstrates the printing of parallel arrays, the ItemNumber is same for all the arrays amd prints
+the related data stored at the particular index.
+
+2. Well it is a common practice because in arrays because the index always start from 0. for example :
+    If you declare an array of length 4 its last element would have an index of 3 not 4 because the count starts
+   from 0 not 1 that is it will be 0,1,2,3 == length of array(4).
+   So in order to store and get the correct value we initialise the iteration construct from 0.
+
+Now another question arises, what if I just stored and start from 1. Then you will be starting from second index 
+and a garbage value will be stored at the first index which will lead to complicatiion in your code. So the best 
+practice is to start from 0.
+ Example from my code:
+	for (ItemNumber = 0; ItemNumber < numOfItems; ItemNumber++) {
+		printf("%3d  %5d    %5c    %11.2lf\n", ItemNumber + 1, itemPriority[ItemNumber], itemFinance[ItemNumber], costOfItem[ItemNumber]);
+		sumItemCost += costOfItem[ItemNumber];
+	}
+This loop starts from index 0 and countinues till itemNumber is less than numOfItems (the loop will stop when itemNumber
+is equal or greater than numOfItem). If the loop was started at 1 then it would have started from second index and
+wouldn't have printed the value of the first index.
+Moreover, if you wish to start from 1 then if you want to store 4 values then you have to declare an array of size
+5, which will not be memory efficient. 
+So, starting from 0 instead of 1 is the best and commonn practice for programmers.
+
+3. I would try to make a child understand about an array through practical examples. I will provide him/her some
+   building blocks numbered from 0 to 4 which are attached to each other with space inside them for storage.
+   I would describe to him about arrays that just like blocks they are together and are continuous. Then I would 
+   ask the child (let's call the child robin, a very bright child capable of understanding complex topics aged 8 years) 
+   about the number of blocks.
+   Robin counts and replies that they are 5.
+   ME: Why is the counting starting from 0 instead of 1.
+   Robin: I don't know probably you made a mistake.
+   ME: No, I didn't made a mistake,imagine these building blocks to be an array and arrays start from 0 instead 
+       of 1. So if you want to build an array of 5, you have to start the counting from 0. Do you get it.
+   Robin: yeah, kind of.
+   ME: Tell me why we use 0 instead of 1 for counting?
+   Robin: Because in arrays counting starts from 0.
+   ME: correct, you got it. Now why we use arrays, can you guess.
+   Robin: I don't know, maybe it is fun.
+   ME: haha! We use arrays because we want to store data in them just like the building box have space for storage.
+       Similarly they have spaces for storing numbers and alphabets too.
+   Robin: Oh I get it , they are like pockets which are together.
+   ME : Yeah, you are getting a hang of it. So now i am storing these numbers written on a piece of paper in these
+        building blocks. I will ask you to pick a specific one, then you get the number and read from the block and 
+        read it out. okay?
+   Robin: Sure, that sounds fun.
+   ME : Pick 0.
+   Robin picks 0 and get the number and read it out aloud. This happens a couple of times till robin gets a hang of it.
+   Now, after that.
+   ME : Great robin you picked the right numbers. Just like you got the numbers stored in these building blocks, 
+        similarly you get the numbers from array. numbers are stored in the array and I tell you to pick one, then 
+        you pick one and get the number stored in it. Do you understand?
+   Robin: umm, little bit. Arrays also have numbers like these building blocks and we open them to get them. right?
+   ME : Yes exactly, you understood what arrays are.
+
+So, by using this approach I would try to teach a child. Hoping, it might work if I have to use this in real life. 
+   
+
+   

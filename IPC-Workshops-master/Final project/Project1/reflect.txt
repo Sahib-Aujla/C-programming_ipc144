@@ -1,0 +1,40 @@
+Name : Sahibpreet Singh
+Student id : 165338211
+Email : sahibpreet-singh1@myseneca.ca
+
+1. We were 3 members in the group and we distributed the work in consideration of time and resource constraints. I volunteered to start and build the mainLogic and loadData functions
+   and we decided to distribute the 4 main functions. I was assigned with the development of mainLogic, loadData, viewByYear and viewByProAndTaxon,
+   our 2nd member khushpreet was assigned with viewByTaxon and out third member yadveer was assigned with viewByProvince (all other helper functions were created later by members considering pattern recognition.)
+
+   However, it was all a collaborative effort as we all uplifted and helped each other when were in a deadlock, traced common code and made helper functions.
+   The work might seem unevenly distributed, however I volunteered myself to develop those functions because I enjoy programming and problem solving.
+
+2. Here is a list of functions prototypes that were created by me
+  i.)int loadData(FILE * DATA_FILE,struct FileData* data,int MAX_RECORDS);
+ ii.)void mainLogic(struct FileData *data, int records);
+iii.)void viewByYear(struct FileData *data,int records);
+ iv.)void viewByProAndTaxon(struct FileData *data,int records);
+  v.)void getTotalByProAndTaxon(char *str,struct FileData* data,int records,struct Total* total,int index);
+ vi.)void getTotalByYear(int year, struct TotalByYear* total, struct FileData* data, int records,int counter);
+vii.)void sortByProvince(struct Total *total);
+ 
+According to me, my contribution to this project was 40% - 42% because I feel like even though I developed the starting functions and some other helper functions it wouldn't have been possible without
+my team members, because whenever I ran into some errors and wasn't able to  solve, I knew I can rely on my team members and eventually we together solve the problem. I wanted to be involoved in the project more 
+because I really adore programming and the final project seemed fun to me. I contributed to 7-8 functions which served different functionalities and traits which were used in other functions as well, this is the reason I concur my 
+contribution to be nearly 40%.
+
+3. The application we developed was centered around data and we have to filter the information in accordance to the output.
+   We used structures and 3 data structures were created namely FileData for storing the data from data.txt (which was 6500 in count), a Total struct which holds the provinces and their codes along with taxons and a member of Count struct,
+   a third data structure Count for storing the total count according to the status. 
+   I feel like our use of data structures can be categorised as fairly efficient (there will always be a better and more efficient way to solve a problem ).
+   We tried to reuse data structures as much as possible, however there are instances in the program where we had to create more structures instances in accordance with the needs of the program
+   The part which I think is  substandard is the validation part, because I wanted to develop it into a function, however I didn't do that because it was easier to incorporate within the code 
+   without the need of a functions as the output required to show the previous menu each time. 
+
+4. The most challenging part of the code was to code viewByProAndTaxon function as the output demanded the data to be filtered
+   by both taxon and province. The first big challenge was to display the province list and taxon list. And the best way to that was to store it in a structure or an array and display them.
+   A structure Total total which was created was used to store province name and code at the same index. However now the challenge was about taxon. storing the taxon in the same strucure would have been illogical as it differed quite a lot and didn't have direct relation.
+   So, one way to do that was to create another structure and store the taxons in it, however it didn't seemed to be practical, then in order to solve that I googled about an array of strings in c which was a 2d character array.
+   This was also described in the course notes as well , i learnt about 2d arrays and used them to store the taxons. After that it was just filtering the data like before, i stored the index of province and taxon and used them to filter the data 
+   and store that data in the total struct and the key was the selectedProvince to store the corresponding data. Overall, the experience in the creation of this funcitons was awesome, a challenge which I was able to overcome thanks to God.
+

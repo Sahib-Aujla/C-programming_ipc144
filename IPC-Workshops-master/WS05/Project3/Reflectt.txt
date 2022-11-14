@@ -1,0 +1,30 @@
+*****************************************************************************
+Workshop - #7 
+REFLECTION
+Full Name : Khushpreet kaur
+Student ID# : 169686219
+Email : khushpreet-kaur20@myseneca.ca
+Section : NKK
+Authenticity Declaration :
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider.This submitted
+piece of work is entirely of my own creation.
+* ****************************************************************************
+1.With the help of user-defined datatypes,we can easily understand our code. We do not need 
+to memorise a lot of variables. Our code becomes maintainable and easily debugged. We can 
+change anything related to variables in much less time. For example, In this workshop I created
+ two userdefined datatypes gameinfo and playerinfo. Both of them contained members of int and 
+char datatype. They could be accesed easily  by me and I could change their values at any point
+ without having trouble of remembering so many variables.With the help of intellisense it become 
+even more easy.I initialised playerinfo with p1 variable and gameinfo with g1.Further I initialised
+ the members and accesed them using p1.membername or g1.membername value.
+2.To store the end results as well I would have created another structure with name endresult.This
+ structure will have all the information about the result came at the end of the game i.e, number 
+of moves remaining, treasure found and number of lives left. I will have created this three members
+ of int datatype and printed the end result at the last using printf statement.
+3.For me the most difficult part of the workshop was  printing the symbol character that signified 
+the current position of the player. I faced alot of problems in tackling it. At first, I could not
+ print it at right position.Once I did it , then I had to print only space in the first iteration of
+ the loop. But finally, I got an idea. I used the if statement after the for loop to print symbol 
+character in the second iteration of the big for loop with the condition that i shouls not be equal
+ to g1.moves. This way , I could print it correctly.

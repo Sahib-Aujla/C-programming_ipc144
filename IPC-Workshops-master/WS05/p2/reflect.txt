@@ -1,0 +1,91 @@
+*****************************************************************************
+                               Reflection
+                             Workshop - #5
+Full Name  : Sahibpreet Singh
+Student ID#: 165338211
+Seneca E-mail: sahibpreet-singh1@myseneca.ca
+Section    : NKK
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+
+1. The two methods which can be used to assign the value of the integer to corresponding first three characters of
+   month are :  (i) Switch    (ii) if-else nested statements
+   I used switch case in my program to accomplish this task.
+   examples of how to write the code for displaying the last two months:
+ i. The setMonth variable is already declared and would bring the values in this swtich case.
+      switch(setMonth){
+       case 11:
+               printf("NOV");
+               break;
+       case 12: 
+              printf("DEC");
+              break:
+       default:
+               break;
+       }
+    This is just the syntax for the switch statement and not the entire program.
+ ii.  The setMonth variable is already declared and would bring the values in these if else statements too.
+      if(setMonth==11){
+               printf("NOV");
+         }
+      else if(setMonth==12){
+                  printf("DEC");
+            }
+     This is just a simple program for accomplishing the task. I didn't used the else statement and used (else-if) 
+     because I want to specify the condition for its execution also like the if statement.
+     However else can also be used. 
+
+2. The 3 type of iteration constructs are for loop, while loop, and do/while loop.
+   I used while loop for the input validation process , however the same tasks can be accomplished using the other
+   type of loops also. I used the while loop in my w5p2 solution program because it met the condition I wanted to
+   set for the iteration along with the ease it provided me to implement the required condition for the iteration.
+   I believe while loop is better suited for situations where you have equality based conditions ( like the loop will
+   continue untill this equals that and when the condition is satisfied it exits.) 
+   While loop was the easiest to implement for me in this workshop, that's why I used it, however I also used for
+   loops too but it was a bit difficult to implement for me as compared to while loops .
+
+3. My approach for testing and debugging the code is usually trial and error. I have broken down and explained my
+   approach and steps that I took for testing and debugging as follows:
+   i. First I try to understand the problem and analyse the output.
+  ii. Then, I think of a basic approach to build the solution.
+ iii. I usually write the code in steps ,that is write one section or block of code then run it and make coreections
+      until it is working as required , before moving to the next part of the solution.
+ Now the steps that I did to debug w5p2 are as follows:
+   i. I encountered a syntactic bug when I just started that is I forgot to print the text in the next line. This 
+      problem was easy to encounter, I analysed my solution and found the line where I have to add \n and that error
+      was corrected.
+  ii. Then I wanted to check my if-else conditions to know which one was getting executed in the first loop where I have
+      to take input for month and year. So I used basic print statement which included text like "if statement" for the
+      if and "else statement" for the else. I ran it, they worked fine. After that I proceeded to write the code
+      required for those if and else statements. I ran it again, it worked fine I moved to the next step.
+ iii. Then the next portion which I have to correct a number of times was the switch construct because first I specified 
+      only case 1 which took me a while to correct it. Like the first one was to write a for loop with a flag rather than
+      the simple condition. Therefore I wrote an if statement inside the for loop to exit the loop, I made the condition
+      setDays==LOG_DAYS for the if statement which worked. Then I wrote an else statement for the next part of the switch
+      statement. That didn't work because  when setDays==Log_DAYS, the else statement didn't ran as expected, therefore
+      I removed the else statement and only kept a optional selection construct(if- statement) for exiting the loop. 
+      After that my switch statement worked fine. Then I copied the same code as case 1 and used it for other cases. I ran 
+      them randomly, they worked fine. After that I proceeded to the next step.
+  iv. I didn't got any problems with the ratings portion for the case 1, it worked fine and then I proceed further.
+   v. Now came the last part of the solution that is to sum all the morning and evening ratings. For that I came with a 
+      solution to create two double variables to store the sum of the ratings. I wrote the syntax for the sum in my switch
+      statement, then I ran it for that specific case in which I wrote the code, however this is where my first big mistake is
+      , I have to write the same code again and again for all the switch cases. It worked but the formatting was incorrect
+      so, I used format  specifiers for the sum variables and it worked. The total sum for morning and evening rating worked
+      fine too. 
+   vi. Then my last obstacle was to create an expression for calculating the total average of morning and evening rating 
+       collectivelly. I wasn't getting the correct answer, so I reviewed the workshop instructions again and I found my
+       problem after reviewing it carefully. Then I implemented the expression that I created in my mind and got the right
+       answers. Hence completed the solution.
+The main point that I keep in my mind is to keep checking and running your code even after a small change to check its 
+ implementation, which usually works for me and avoids any big mistakes to occur(however practically I encounter big problems 
+for my code too even after chehcking the program again and again). The time for debugging gets reduced after using this approach.
+The best debug method I usually try to implement is to be patient and review the code carefully rather than getting frustrated 
+which reduces efficiency and usually doubles the time. However, this is all good in theory because I get frustrated from the bugs.
+At that time I try to be patient and look for the problem. This is the basic simple approach that I use to debug my code and it 
+works for me.
+
+     

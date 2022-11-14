@@ -1,0 +1,92 @@
+*****************************************************************************
+                               Reflection
+                             Workshop - #8
+Full Name  : Sahibpreet Singh
+Student ID#: 165338211
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+
+1. I reckon with the structure allocating a large chunk of memory as compared to others.Now
+   calculating the memory bytes of ReportData structure. It contains three integer type variables
+   which would consume 4*3=12 bytes of memory and 6 double type variables which would occupy 6*8=48 bytes
+   which makes the total to 48+12=60 bytes. The structure ReportData would require minimum of 60 bytes.
+  Below is the function displayReportData used in this workshop. As it is cleary visible that a constant
+ type of ReportData is passes as a parameter, which would take minimum 60 bytes.
+
+     void displayReportData(const struct ReportData reportInfo, const int res) {
+
+	printf("%07d %10.2lf %10.1lf %10.4lf %9d %8d %8.1lf %7.2lf %7.5lf",reportInfo.Sku, reportInfo.priceProduct, reportInfo.WeightInLbs, reportInfo.weightInKg, reportInfo.weightInG, reportInfo.caloriePerServe, reportInfo.TotalServings, reportInfo.CostPerServing, reportInfo.CostPerCalories);
+	if (res == 1) {
+		printf("***");
+	}
+
+	printf("\n");
+
+     }
+  
+  In order to improve memory allocation we can pass the values of the ReportData from the star()
+  function rather than the whole  struct, which copies the entire struct passed as an argument into
+  the parameter which occupies more than 60 bytes of memory (excluding padding). However passing values
+  wouldn't improve memory by a large extent however it will consume less memory than the structure
+  so by doing that we can improve memory.
+
+2. The CatFoodInfo and ReportData contains common members, in order to modify the code in order
+   to inter relate these members. I would use the following approach.
+   
+    struct ReportData calculateReportData(const struct CatFoodInfo catData) {
+	struct ReportData ReportForOneElement;
+
+	//ReportForOneElement.Sku = catData.sku;
+	//ReportForOneElement.WeightInLbs = catData.weightInLbs; 
+	//ReportForOneElement.caloriePerServe = catData.caloriesPerServing; 
+	//ReportForOneElement.priceProduct = catData.productPrice;
+
+	ReportForOneElement.weightInKg = convertLbsKg(&catData.weightInLbs, NULL);
+
+	ReportForOneElement .weightInG= convertLbsG(&catData.weightInLbs, NULL);
+
+	ReportForOneElement.TotalServings= calculateServings(SERVING_SIZE, ReportForOneElement.weightInG, NULL);
+	
+
+	ReportForOneElement.CostPerServing = calculateCostPerServing(&catData.productPrice, &ReportForOneElement.TotalServings, NULL);
+	
+
+
+	double totalCalorie = catData.caloriesPerServing * ReportForOneElement.TotalServings;
+	ReportForOneElement.CostPerCalories = calculateCostperCal(&catData.productPrice, &totalCalorie, NULL);
+
+	
+	return ReportForOneElement;
+}
+
+I would modify the code like this I have commented the lines which were replaced not needed in order
+to demonstrate the change. Rather than storing the common data in ReportForOneElement we can simply ignore that,
+and do not allocate the memory to ReportForOneElement, instead even for the calculations we can use catData for the
+calculations, which would result in the same result as that earlier. By doing this we can remove the common
+data types from the ReportData Structure which would reduce memory occupancy.
+However by doing this displayReportData would also need to modified. After modifications displayReportData
+would include 
+
+  void displayReportData(const struct CatFoodInfo catinfo,const struct ReportData reportInfo, const int res) {
+
+	printf("%07d %10.2lf %10.1lf %10.4lf %9d %8d %8.1lf %7.2lf %7.5lf",catinfo.sku, catinfo.productPrice, catinfo.weightInLbs, reportInfo.weightInKg, reportInfo.weightInG, catinfo.caloriesPerServing, reportInfo.TotalServings, reportInfo.CostPerServing, reportInfo.CostPerCalories);
+	if (res == 1) {
+		printf("***");
+	}
+
+	printf("\n");
+
+     }
+
+I replaced reportdata.sku to catinfo.sku
+           reportdata.WeightInLbs to catinfo.weightInLbs
+           reportdata.priceProduct to catinfo.productPrice
+           reportdata.caloriePerServe to catinfo.caloriesPerServing
+By doing that the common members are not repeated and Report data only contains the types which are not declared in CatFoodInfo.
+
+However the best option can be to remove ReportData Struct and add the remaining members of the ReportData 
+to CatFoodInfo. This would remove repetition and would save memory as well.
